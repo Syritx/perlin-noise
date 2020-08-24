@@ -1,6 +1,4 @@
 package mapping;
-import java.util.Random;
-
 import coordinates.*;
 
 public class Grid {
