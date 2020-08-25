@@ -21,8 +21,6 @@ public class Grid {
 
     void createTiles() {
 
-
-
         int id = 0;
         for (int x = 0; x < tileCount; x++) {
             for (int y = 0; y < tileCount; y++) {
@@ -59,7 +57,6 @@ public class Grid {
         int[] information = {
             tileSize, tileCount
         };
-
         return information;
     }
 }
