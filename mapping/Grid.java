@@ -5,7 +5,7 @@ import coordinates.*;
 
 public class Grid {
 
-    static int tileCount = 10;
+    static int tileCount = 20;
     static int tileSize = 5;
     int xActual, yActual;
 
@@ -33,12 +33,18 @@ public class Grid {
                 float AB = products[0] + xFrac * (products[1]-products[0]);
                 float CD = products[2] + xFrac * (products[3]-products[2]);
 
+                float xOffset = fade((float)products[0] - x);
+                float yOffset = fade((float)products[1] - y);
                 float value = AB+yFrac*(CD-AB);
 
                 tiles[id] = new Tile(x+xActual,y+yActual,value*10,tileSize);
                 id++;
             }
         }
+    }   
+
+    float dotProduct(Vector2 a, Vector2 b) {
+        return (float)a.x * b.x + a.y * b.y;
     }
 
     private float[] dotProduct(float x, float y) {
@@ -55,10 +61,8 @@ public class Grid {
         return products;
     }
 
-    float lerp(float min, float max, float value) {
-
-        float result = (1-value)*min + value*max;
-        return result;
+    float fade(float t) {
+        return t * t * t * (t * (t * 6 - 15) + 10);
     }
 
     public static int[] getTileInformation() {
