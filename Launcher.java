@@ -8,7 +8,7 @@ import mapping.*;
 
 public class Launcher {
 
-    static int chunkLengthOfMap = 10;
+    static int chunkLengthOfMap = 5;
     static Grid[] grids = new Grid[chunkLengthOfMap*chunkLengthOfMap];
     static Vector2[] gradients;
 
@@ -93,7 +93,6 @@ public class Launcher {
         new Game(grids,information);
     }
 }
-
 
 //---------------------------------------------//
 // WINDOW DISPLAY //
